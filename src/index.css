@@ -1,0 +1,330 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Chakra Petch', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0a0a0a;
+    color: #e5e5e5;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, .font-tactical {
+    font-family: var(--font-display);
+  }
+
+  .font-data {
+    font-family: var(--font-mono);
+  }
+
+  /* Custom Sleek Dark Tactical Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0d0f0c;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2a2e2a;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d97706;
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
+
+/* Custom Tactical Scanline & Vignette */
+.scanlines-overlay {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.35) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+.nvg-glow {
+  filter: drop-shadow(0 0 12px rgba(34, 197, 94, 0.35));
+}
+
+.laser-glow {
+  box-shadow: 0 0 15px #ef4444, 0 0 30px #ef4444;
+}
+
+/* Subtle Tactical Grid Pattern */
+.tactical-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.camo-subtle {
+  background-color: #121411;
+  background-image: radial-gradient(#1f241d 15%, transparent 16%), radial-gradient(#171a15 15%, transparent 16%);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+}
+
+/* Custom Tactical Mouse Cursors */
+.cursor-crosshair-laser,
+.cursor-crosshair-laser * {
+  cursor: crosshair !important;
+}
+
+.cursor-tactical-dot,
+.cursor-tactical-dot * {
+  cursor: cell !important;
+}
+
+.cursor-sniper-scope,
+.cursor-sniper-scope * {
+  cursor: crosshair !important;
+}
+
+/* Avatar Frame Styles (Unlocked by Rank Up) */
+.frame-supreme-gold {
+  border: 3px solid #fbbf24;
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.5), inset 0 0 10px rgba(251, 191, 36, 0.3);
+  position: relative;
+}
+.frame-supreme-gold::after {
+  content: '★';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #fbbf24;
+  color: #000;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 9999px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.frame-vice-ruby {
+  border: 3px solid #f43f5e;
+  box-shadow: 0 0 15px rgba(244, 63, 94, 0.5);
+}
+
+.frame-golden-star {
+  border: 2.5px solid #eab308;
+  box-shadow: 0 0 12px rgba(234, 179, 8, 0.4);
+}
+
+.frame-cyan-tactical {
+  border: 2px solid #06b6d4;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
+}
+
+.frame-emerald-chevron {
+  border: 2px solid #10b981;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+}
+
+.frame-recruit-ring {
+  border: 1.5px solid #71717a;
+}
+
+/* 19 Ornate Custom Avatar Frames */
+.frame-angel-crystal {
+  border: 2.5px solid #38bdf8;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.6), inset 0 0 8px rgba(56, 189, 248, 0.3);
+}
+
+.frame-ice-cat {
+  border: 2.5px solid #7dd3fc;
+  box-shadow: 0 0 16px rgba(125, 211, 252, 0.65), inset 0 0 6px rgba(125, 211, 252, 0.3);
+}
+
+.frame-gothic-skull {
+  border: 2.5px solid #a3a3a3;
+  box-shadow: 0 0 14px rgba(163, 163, 163, 0.5), inset 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.frame-cosmic-maiden {
+  border: 2.5px solid #c084fc;
+  box-shadow: 0 0 16px rgba(192, 132, 252, 0.65), inset 0 0 8px rgba(192, 132, 252, 0.35);
+}
+
+.frame-archangel-wings {
+  border: 2.5px solid #fde047;
+  box-shadow: 0 0 18px rgba(253, 224, 71, 0.6), inset 0 0 10px rgba(253, 224, 71, 0.35);
+}
+
+.frame-kitsune-mask {
+  border: 2.5px solid #fb923c;
+  box-shadow: 0 0 16px rgba(251, 146, 60, 0.65), inset 0 0 8px rgba(251, 146, 60, 0.3);
+}
+
+.frame-abyssal-dragon {
+  border: 2.5px solid #818cf8;
+  box-shadow: 0 0 18px rgba(129, 140, 248, 0.7), inset 0 0 8px rgba(129, 140, 248, 0.35);
+}
+
+.frame-obsidian-eyes {
+  border: 2.5px solid #f43f5e;
+  box-shadow: 0 0 16px rgba(244, 63, 94, 0.65), inset 0 0 8px rgba(244, 63, 94, 0.3);
+}
+
+.frame-enso-blood {
+  border: 2.5px solid #e11d48;
+  box-shadow: 0 0 16px rgba(225, 29, 72, 0.7), inset 0 0 8px rgba(225, 29, 72, 0.4);
+}
+
+.frame-chrono-gear {
+  border: 2.5px solid #f59e0b;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.6), inset 0 0 8px rgba(245, 158, 11, 0.3);
+}
+
+.frame-toxic-emerald {
+  border: 2.5px solid #10b981;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.65), inset 0 0 8px rgba(16, 185, 129, 0.3);
+}
+
+.frame-sakura-bonsai {
+  border: 2.5px solid #f472b6;
+  box-shadow: 0 0 16px rgba(244, 114, 182, 0.65), inset 0 0 8px rgba(244, 114, 182, 0.3);
+}
+
+.frame-higanbana-ruby {
+  border: 2.5px solid #ef4444;
+  box-shadow: 0 0 18px rgba(239, 68, 68, 0.7), inset 0 0 8px rgba(239, 68, 68, 0.35);
+}
+
+.frame-void-smoke {
+  border: 2.5px solid #a855f7;
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.65), inset 0 0 8px rgba(168, 85, 247, 0.35);
+}
+
+.frame-neuvillette-hydro {
+  border: 2.5px solid #06b6d4;
+  box-shadow: 0 0 18px rgba(6, 182, 212, 0.7), inset 0 0 8px rgba(6, 182, 212, 0.35);
+}
+
+.frame-briar-blood-rose {
+  border: 2.5px solid #be123c;
+  box-shadow: 0 0 16px rgba(190, 18, 60, 0.7), inset 0 0 8px rgba(190, 18, 60, 0.35);
+}
+
+.frame-pastel-galaxy {
+  border: 2.5px solid #e879f9;
+  box-shadow: 0 0 16px rgba(232, 121, 249, 0.65), inset 0 0 8px rgba(232, 121, 249, 0.35);
+}
+
+.frame-celestial-tiara {
+  border: 2.5px solid #38bdf8;
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.7), inset 0 0 8px rgba(56, 189, 248, 0.4);
+}
+
+.frame-wolf-ears-paw {
+  border: 2.5px solid #94a3b8;
+  box-shadow: 0 0 16px rgba(148, 163, 184, 0.6), inset 0 0 8px rgba(148, 163, 184, 0.3);
+}
+
+/* Name Glow Styles & Genshin / Wuwa / NTE Prestige Aesthetics */
+.name-style-gold {
+  color: #fde047;
+  text-shadow: 0 0 8px rgba(250, 204, 21, 0.7);
+}
+.name-style-emerald {
+  color: #6ee7b7;
+  text-shadow: 0 0 8px rgba(52, 211, 153, 0.7);
+}
+.name-style-cyan {
+  color: #67e8f9;
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.7);
+}
+.name-style-amber {
+  color: #fbbf24;
+  text-shadow: 0 0 8px rgba(245, 158, 11, 0.7);
+}
+.name-style-crimson {
+  color: #f87171;
+  text-shadow: 0 0 8px rgba(239, 68, 68, 0.7);
+}
+.name-style-astral {
+  background: linear-gradient(135deg, #f43f5e, #fbbf24, #10b981, #06b6d4, #8b5cf6, #ec4899);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-shift 4s ease infinite;
+  filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.8));
+}
+.name-style-wuwa-resonance {
+  color: #a5f3fc;
+  text-shadow: 0 0 10px #06b6d4, 0 0 20px #0891b2, 0 0 30px #0e7490;
+  animation: pulse-glow 2.5s ease-in-out infinite alternate;
+}
+.name-style-genshin-archon {
+  color: #fef08a;
+  text-shadow: 0 0 10px #eab308, 0 0 20px #ca8a04, 0 0 30px #a16207;
+  animation: gold-shimmer 3s ease-in-out infinite alternate;
+}
+.name-style-abyssal-void {
+  color: #e9d5ff;
+  text-shadow: 0 0 10px #a855f7, 0 0 20px #7e22ce, 0 0 35px #581c87;
+}
+.name-style-flame-phoenix {
+  color: #fed7aa;
+  text-shadow: 0 0 10px #ea580c, 0 0 20px #c2410c, 0 0 30px #9a3412;
+}
+.name-style-cyber-neon {
+  color: #fbcfe8;
+  text-shadow: 0 0 10px #f43f5e, 0 0 20px #06b6d4, 0 0 30px #8b5cf6;
+}
+
+@keyframes rainbow-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes pulse-glow {
+  from { filter: drop-shadow(0 0 6px #06b6d4); }
+  to { filter: drop-shadow(0 0 16px #22d3ee); }
+}
+@keyframes gold-shimmer {
+  from { filter: drop-shadow(0 0 6px #f59e0b); }
+  to { filter: drop-shadow(0 0 18px #fbbf24); }
+}
+
+/* NVG Night Vision Mode */
+.theme-nvg {
+  filter: sepia(30%) hue-rotate(60deg) brightness(1.05) contrast(1.1);
+}
+
+/* Day Mode / Tactical Desert Light */
+.theme-day {
+  background-color: #171b18 !important;
+}
